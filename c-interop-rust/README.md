@@ -2,6 +2,10 @@
 
 Easily Learn how to integrate C to Rust from lvl 0.
 
+> [!NOTE]
+> Originally learnt from Packt's [video](https://www.youtube.com/watch?v=1H9FHhRntAk).
+> Added quite a bit on it.
+
 ## Getting Started
 
 ### Project Structure
@@ -147,6 +151,24 @@ project(Tutorial C)
 add_library(ask_c STATIC lib.c)
 
 install(TARGETS ask_c DESTINATION .)
+```
+
+---
+
+#### `cargo.toml`
+
+Adding `cmake` crate to build-dependencies (crates are only used for building the binary).
+
+```toml
+[package]
+name = "rust-ffi"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+
+[build-dependencies]
+cmake = "0.1.31"
 ```
 
 ---
