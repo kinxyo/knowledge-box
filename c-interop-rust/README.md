@@ -1,4 +1,6 @@
-# RustFFIforC Tutorial
+# Rust FFI for C ~ tutorial
+
+Easily Learn how to integrate C to Rust from lvl 0.
 
 ## Getting Started
 
@@ -204,4 +206,3 @@ fn main() {
 ```
 
 now perform a `cargo run` and run it🍹
-
