@@ -1,5 +1,7 @@
 # Nuxt as a frontend for Tauri
 
+![NuxtTauriBlog](https://github.com/kinxyo/knowledge-box/assets/90744941/d79f3776-646e-4a71-ab16-b94e62321493)
+
 ## Introduction
 
 **Nuxt** is a microframework for Vue.js. It is basically a fullstack framework for javascript. It includes both frontend & the backend, however we will only use the frontend part.
