@@ -9,5 +9,5 @@
 
 
 > [!NOTE]
-> For now, use the _medium link_.
+> For now, use the _medium_ link.
 > I will soon be putting the whole article here in the README.
