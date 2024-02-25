@@ -1,0 +1,98 @@
+:root {
+	--silver: rgb(190, 209, 209);
+  --accent: rgb(224, 31, 96);
+}
+
+
+*,
+*::after,
+*::before {
+  box-shadow: border-box;
+  user-select: none;
+}
+
+
+body {
+	background-color: rgb(4, 4, 21);
+	color: var(--silver);
+	min-height: 100vh;
+	display: grid;
+	place-items: center;
+	text-align: center;
+}
+
+*::-webkit-scrollbar {
+	display: none;
+}
+
+* {
+	scrollbar-width: thin;
+	scrollbar-color: rgba(255, 0, 111, 0) transparent;
+}
+
+.loading {
+	width: 6px;
+	height: 6px;
+	position: relative;
+	border-radius: 100%;
+	background-color: var(--silver);
+
+	animation: loading 0.8s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes loading {
+	0% {
+		left: 0;
+		right: 100%;
+	}
+
+	100% {
+		left: 100%;
+		right: 0;
+	}
+}
+
+.set {
+	display: flex;
+	flex-direction: column;
+	gap: 0.2rem;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+input[type="number"] {
+	padding: 0.5rem;
+	border: none;
+	background-color: var(--accent);
+	color: var(--silver);
+	font-size: large;
+	border-radius: 10rem;
+	text-align: center;
+	appearance: textfield;
+	-moz-appearance: textfield; /* For Firefox */
+	-webkit-appearance: textfield;
+	cursor: default;
+}
+
+input:focus, button {
+  outline: none;
+}
+
+button {
+	border-radius: 10rem;
+	padding: 1rem;
+	border: none;
+	background: var(--silver);
+	color: var(--accent);
+	font-size: large;
+	transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+	background-color: var(--accent);
+	color: white;
+}
