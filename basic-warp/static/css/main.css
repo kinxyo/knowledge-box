@@ -1,0 +1,22 @@
+:root {
+    --light: #cbd5e1;
+    --dark: #020617
+}
+
+body {
+    background-color: var(--dark);
+    color: var(--light);
+    color: #e11d48;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    font-size: xx-large;
+    text-rendering: geometricPrecision;
+    text-shadow: 0px -2px 8px #e11d48;
+    /* text-shadow: 0px -2px 8px rgba(33, 33, 33, 0.459); */
+
+
+    user-select: none;
+    cursor: default;
+    scrollbar-width: none;
+}
