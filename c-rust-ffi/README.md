@@ -1,6 +1,6 @@
 # Rust FFI for C ~ tutorial
 
-Easily Learn how to integrate C to Rust from lvl 0.
+Integrate C to Rust.
 
 > [!NOTE]
 > Originally learnt from Packt's [video](https://www.youtube.com/watch?v=1H9FHhRntAk).

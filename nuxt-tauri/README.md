@@ -12,52 +12,45 @@ _One may be inclined to think that Nuxt might be an overkill, but it isn’t. Nu
 
 ## DEVELOPMENT
 
-To setup both of these in harmony, I would first recommend watching this video by Simon Hyll. He shows how to setup the folder structure properly.
-
-[Video Link](https://www.youtube.com/watch?v=MOnf_kGI6L0)
-
-In case, you wanna skip the video, here’s the tree-view of the directory:
+Here's how the folder structure is supposed to look:
 
 ```bash
 .
 |-- src
+|   |-- assets
+|   |-- components
+|   |-- public
+|   |-- layouts
+|   |-- composables
+|   |-- middleware
 |   |-- pages
-|   `-- public
+|   `-- app.vue
 |-- src-tauri
+|   |-- src
+|   |-- build.rs
 |   |-- Cargo.lock
 |   |-- Cargo.toml
-|   |-- build.rs
-|   |-- icons
-|   |-- src
-|   |-- target
 |   `-- tauri.conf.json
 |-- tsconfig.json
-|-- yarn.lock
-|-- README.md
 |-- nuxt.config.ts
-|-- package-lock.json
 |-- package.json
-|-- server
-    `-- tsconfig.json
+|-- yarn.lock
+`-- README.md
 ```
 
-Once you have them setup, you can happily start developing your application.
+[Video Link](https://www.youtube.com/watch?v=MOnf_kGI6L0)
 
 ## PRODUCTION
 
-After you’re done with your developmental build and want to create a binary for your application, you will need to run the build command.
-
-But before that, you must configure a few files (which hardly takes 1 minute).
+For creating a binary for production, you must configure a few files; otherwise you may run into the below error.
 
 ![Top wtf moments when developing Tauri apps with Nuxt](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/muwd784uef5exx5hj9p6.png)
 
-If you’ll run the build command without configuring the files, you’ll likely run into the above error.
-
 ### Explanation
 
-Usually, popular frontend frameworks like React and Vue, create a dedicated folder (i.e dist folder) where they keep the static build of the frontend by pre-rendering the routes. These files are then served by the server and rendered by the browser. Since Tauri uses browser rendering engine to manifest the frontend therefore it naturally requires the static build. Hence, the above error only occurs when Tauri isn’t successful in finding the static build.
+Usually, popular frontend frameworks like React and Vue, create a dedicated folder (i.e dist folder) where they keep the static build of the frontend by pre-rendering the code. These files are then served by the server and rendered by the browser. Since Tauri uses browser rendering engine to manifest the frontend therefore it naturally requires the static build. Hence, the above error occurs only when Tauri isn’t successful in finding the static build.
 
-Nuxt, being a full-stack framework, by default renders the build files on demand via its _node_ server instead of pre-rendering. This creates a conflict as Tauri requires static build files in advance to manifest the frontend of your application.
+Nuxt, being a full-stack framework, is configured to by default render via its backend node server. This creates a conflict as Tauri requires static build files in advance to manifest the frontend of your application.
 
 ### Solution
 
@@ -92,11 +85,11 @@ Lastly, we need to specify the path to our static files folder. In tauri.conf.js
 Cool! So now you can run the build command.
 
 ```bash
-yarn tauri build
+yarn run tauri build
 ```
 
 If you aren’t using yarn then you can refer to other build commands [here](https://tauri.app/v1/guides/building/windows/).
 
 ## Closing Remark
 
-To refer an actual project in the process, you can check out my github repo— [AI Therapist](https://github.com/kinxyo/CooperAI) application.
+To refer an actual project for better context, you can check out my github repo— [AI Therapist](https://github.com/kinxyo/CooperAI) application.

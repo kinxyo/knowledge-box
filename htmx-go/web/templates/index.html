@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="/web/static/js/htmx.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/web/static/css/style.css">
+</head>
+<body>
+
+    <div id="example1">
+        <button hx-get="/clicked" hx-swap="outerHTML">Click me</button>
+    </div>
+
+    <div id="example2" hx-get="/messages" hx-trigger="mouseenter">
+        Hover here to change this.
+    </div>
+
+    <div id="example3" hx-put="/channel" hx-trigger="load">
+        Put to `channel`
+    </div>
+
+    <input type="text" name="q"
+    hx-get="/trigger_delay"
+    hx-trigger="keyup changed delay:500ms"
+    hx-target="#search-results"
+    placeholder="Search..."
+>
+<div id="search-results"></div>
+
+</body>
+</html>
